@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Saher_Blue_Eagle_WORM", "Qi-w0rm v0.1.2 Unfinished\Saher_Blue_Eagle_WORM.vbproj", "{12D0E219-151E-4686-B143-CF1E38FC497C}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Saher_Blue_Eagle_WORM", "Saher_Blue_Eagle_WORM_Open_soruce\Saher_Blue_Eagle_WORM.vbproj", "{12D0E219-151E-4686-B143-CF1E38FC497C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
