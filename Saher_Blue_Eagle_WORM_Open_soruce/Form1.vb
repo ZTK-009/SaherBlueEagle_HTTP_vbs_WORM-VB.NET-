@@ -1,4 +1,4 @@
-﻿Imports System.Threading
+Imports System.Threading
 Imports System.Net
 Imports Microsoft.VisualBasic
 Imports Microsoft.VisualBasic.CompilerServices
