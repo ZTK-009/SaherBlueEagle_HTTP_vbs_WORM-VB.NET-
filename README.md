@@ -2,7 +2,7 @@
 This is Open Soruce for Education and some Development not for script kiddes and not for who use it in illeagal issuses 
 The programmer is not responsible for this issues 
 This Source is now Updated 12/4/2019 To be more Easy Do not forget to add the Resources String from text files included in the RAR
-# Even List View is Updated No Refrences is Add No Error in te Solution
+# Even List View is Updated No Refrences is Added , No Error in the Solution
 
 
 Good Bye
