@@ -1,4 +1,4 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
@@ -468,9 +468,11 @@ Partial Class Form1
         Me.L1.Font = New System.Drawing.Font("Berlin Sans FB Demi", 11.25!, System.Drawing.FontStyle.Bold)
         Me.L1.ForeColor = System.Drawing.Color.Yellow
         Me.L1.FullRowSelect = True
+        Me.L1.LargeImageList = Me.ii
         Me.L1.Location = New System.Drawing.Point(0, 0)
         Me.L1.Name = "L1"
         Me.L1.Size = New System.Drawing.Size(789, 298)
+        Me.L1.SmallImageList = Me.ii
         Me.L1.TabIndex = 5
         Me.L1.UseCompatibleStateImageBehavior = False
         Me.L1.View = System.Windows.Forms.View.Details
