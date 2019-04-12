@@ -1,6 +1,8 @@
 # SaherBlueEagle_HTTP_WORM
 This is Open Soruce for Education and some Development not for script kiddes and not for who use it in illeagal issuses 
 The programmer is not responsible for this issues 
+This Source is now Updated 12/4/2019 To be more Easy Do not forget to add the Resources String from text files included in the RAR
+Good Bye
 MIT License
 
 Copyright (c) [2018] [Saher_Blue_Eagle]
