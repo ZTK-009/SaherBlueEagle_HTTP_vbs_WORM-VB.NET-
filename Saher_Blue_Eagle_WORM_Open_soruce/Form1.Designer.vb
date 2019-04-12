@@ -45,12 +45,13 @@ Partial Class Form1
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Lv1 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader15 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.StatusStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -59,9 +60,9 @@ Partial Class Form1
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.Teal
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel3, Me.ToolStripStatusLabel2})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 298)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 273)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(789, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(923, 22)
         Me.StatusStrip1.TabIndex = 3
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -462,7 +463,7 @@ Partial Class Form1
         '
         Me.L1.BackColor = System.Drawing.Color.Teal
         Me.L1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.L1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9})
+        Me.L1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader12, Me.ColumnHeader13, Me.ColumnHeader14, Me.ColumnHeader15})
         Me.L1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.L1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.L1.Font = New System.Drawing.Font("Berlin Sans FB Demi", 11.25!, System.Drawing.FontStyle.Bold)
@@ -471,7 +472,7 @@ Partial Class Form1
         Me.L1.LargeImageList = Me.ii
         Me.L1.Location = New System.Drawing.Point(0, 0)
         Me.L1.Name = "L1"
-        Me.L1.Size = New System.Drawing.Size(789, 298)
+        Me.L1.Size = New System.Drawing.Size(923, 273)
         Me.L1.SmallImageList = Me.ii
         Me.L1.TabIndex = 5
         Me.L1.UseCompatibleStateImageBehavior = False
@@ -497,28 +498,10 @@ Partial Class Form1
         Me.ColumnHeader4.Text = "USER"
         Me.ColumnHeader4.Width = 70
         '
-        'ColumnHeader5
+        'ColumnHeader10
         '
-        Me.ColumnHeader5.Text = "Country"
-        Me.ColumnHeader5.Width = 100
-        '
-        'ColumnHeader6
-        '
-        Me.ColumnHeader6.Text = "Ver."
-        '
-        'ColumnHeader7
-        '
-        Me.ColumnHeader7.Text = "Antivirus"
-        Me.ColumnHeader7.Width = 110
-        '
-        'ColumnHeader8
-        '
-        Me.ColumnHeader8.Text = "USB"
-        Me.ColumnHeader8.Width = 65
-        '
-        'ColumnHeader9
-        '
-        Me.ColumnHeader9.Text = "Status"
+        Me.ColumnHeader10.Text = "OS"
+        Me.ColumnHeader10.Width = 100
         '
         'Lv1
         '
@@ -526,16 +509,38 @@ Partial Class Form1
         Me.Lv1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Lv1.Location = New System.Drawing.Point(0, 0)
         Me.Lv1.Name = "Lv1"
-        Me.Lv1.Size = New System.Drawing.Size(789, 320)
+        Me.Lv1.Size = New System.Drawing.Size(923, 295)
         Me.Lv1.TabIndex = 6
         Me.Lv1.UseCompatibleStateImageBehavior = False
         Me.Lv1.View = System.Windows.Forms.View.List
+        '
+        'ColumnHeader11
+        '
+        Me.ColumnHeader11.Text = "Country"
+        Me.ColumnHeader11.Width = 100
+        '
+        'ColumnHeader12
+        '
+        Me.ColumnHeader12.Text = "Ver."
+        '
+        'ColumnHeader13
+        '
+        Me.ColumnHeader13.Text = "Antivirus"
+        Me.ColumnHeader13.Width = 100
+        '
+        'ColumnHeader14
+        '
+        Me.ColumnHeader14.Text = "USB"
+        '
+        'ColumnHeader15
+        '
+        Me.ColumnHeader15.Text = "Status"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(789, 320)
+        Me.ClientSize = New System.Drawing.Size(923, 295)
         Me.Controls.Add(Me.L1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Lv1)
@@ -570,10 +575,11 @@ Partial Class Form1
     Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader5 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader6 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader7 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader8 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader9 As System.Windows.Forms.ColumnHeader
     Friend WithEvents Lv1 As System.Windows.Forms.ListView
+    Friend WithEvents ColumnHeader10 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader11 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader12 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader13 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader14 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader15 As System.Windows.Forms.ColumnHeader
 End Class
