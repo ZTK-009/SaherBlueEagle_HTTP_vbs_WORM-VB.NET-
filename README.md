@@ -11,6 +11,15 @@
 # Tutorial : https://www.youtube.com/watch?v=mn2wdL4yiuM
 
 # Fork For More Sources [Support]
+
+[![Bitcoin Donate Button](https://raw.githubusercontent.com/SaherBlueEagle/XPR-2020-Free/master/Bitcoin-Donate-button.png)](https://www.facebook.com/NsBleeD/posts/)
+# Support us please 🥰  
+Bitcoin : 3LfLEoLpt3XBz7ozwSSsawWSZJruCQSQgx
+
+[![Patreaon Button](https://raw.githubusercontent.com/SaherBlueEagle/XPR-2020-Free/master/patreon_button2.png)](https://www.patreon.com/BlueEagle)
+# Support us please 🥰 for more & more  
+
+
 KIDDIES WHO ONLY DOWNLOAD WITHOUT FORK OR EVEN give a STAR
 This is Open Soruce for Education and some Development not for script kiddes and not for who use it in illeagal issuses 
 The programmer is not responsible for this issues 
