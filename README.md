@@ -15,6 +15,11 @@
 [![Facebook Button](https://raw.githubusercontent.com/SaherBlueEagle/XPR-2020-Free/master/facebook_button.png)](https://www.facebook.com/NsBleeD/posts/)
 
 [![Bitcoin Donate Button](https://raw.githubusercontent.com/SaherBlueEagle/XPR-2020-Free/master/Bitcoin-Donate-button.png)](https://www.facebook.com/NsBleeD/posts/)
+
+# If you like my work, consider buying me a Nescafe coffee Or Energy Drink 🥰 
+
+# Bitcoin : 3LfLEoLpt3XBz7ozwSSsawWSZJruCQSQgx
+
 # Support us please 🥰  
 Bitcoin : 3LfLEoLpt3XBz7ozwSSsawWSZJruCQSQgx
 
